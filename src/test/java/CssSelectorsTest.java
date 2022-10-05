@@ -28,5 +28,45 @@ public class CssSelectorsTest {
     By cssClass2 = By.cssSelector("[class='topSecret']");
     driver.findElement(cssClass2);
 
+    By all = By.cssSelector("*");
+    driver.findElement(all);
+
+    By ulInDiv = By.cssSelector("div ul");
+    By trInTable = By.cssSelector("table tr");
+    By trInBody = By.cssSelector("tbody tr");
+
+    driver.findElement(ulInDiv);
+    driver.findElement(trInTable);
+    driver.findElement(trInBody);
+
+    By firstChildUlinDiv = By.cssSelector("div > ul");
+    By firstChildTrInTbody = By.cssSelector("tbody > tr");
+
+    driver.findElement(firstChildTrInTbody);
+    driver.findElement(firstChildUlinDiv);
+
+    By firstFormAfterLabel = By.cssSelector("label + form");
+    By allFormAfterLabel = By.cssSelector("label ~ form");
+
+    driver.findElement(firstFormAfterLabel);
+    driver.findElement(allFormAfterLabel);
+
+    By attrTag = By.cssSelector("input[name='fname']");
+    By attrContains = By.cssSelector("[name*='name']");
+    By attrStarts = By.cssSelector("[name^='f']");
+    By attrEnds = By.cssSelector("[name$='name']");
+
+    driver.findElement(attrTag);
+    driver.findElement(attrContains);
+    driver.findElement(attrStarts);
+    driver.findElement(attrEnds);
+
+    By firstChild = By.cssSelector("li:first-child");
+    By lastChild = By.cssSelector("li:last-child");
+    By thirdChild = By.cssSelector("li:nth-child(3)");
+
+    driver.findElement(firstChild);
+    driver.findElement(lastChild);
+    driver.findElement(thirdChild);
   }
 }
